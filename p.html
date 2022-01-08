@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/68f8681dba.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/style.css">
+		<title>記帳系統</title>
+		
+	</head>
+	
+
+
+	<body>
+		
+        <header>
+			<div class='container'>
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<a class="navbar-brand" href="p.html"><img src='pictures/n.png' width='80'></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+						  <li class="nav-item">
+							<a class="nav-link" href="p.html">主頁</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="p.html">週花費</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="p.html">月花費</a>
+						  </li>	
+	
+						</ul>
+					  
+					  </div>
+
+			
+				</nav>
+			</div>
+        </header>
+		<section id='intro'>
+			
+			<div class="jumbotron">
+			  <div class='container'>
+				  <div class='row'>
+					  <div class='col-sm-8'>
+						  <h1 class="display-4">記帳</h1>
+						  <p class="lead">紀錄日常花費</p>
+					  </div>
+				  </div>
+			  </div>
+			</div>
+			
+		</section>
+		<section id="second">
+				<div class='container'>
+					<div class='row'>
+						<table class="table" id ="myTable">
+							<thead>
+								<tr>
+									<th scope="col">日期</th>
+									<th scope="col">花費</th>
+									<th scope="col">備註</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>								
+				</div>	
+				<button id = "btn2"type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+					新增</button>
+
+					<div id="demo" class="collapse in">
+						<div class="input-group">
+							<div class="input-group-prepend" >
+							  <span class="input-group-text">支出</span>
+							</div>
+							<input id = "input1" placeholder="日期"></input>
+							<input id = "input2" placeholder="花費"></input>
+							<input id = "input3"placeholder="備註"></input>
+							<a id ="btn1" href="#" role="button">儲存</a></div>
+						  </div>
+					
+				</div>
+	
+			
+			
+		</section>
+        
+	
+    <script>
+
+
+  
+let list = [];
+	      function newrow(name,price,qty) {
+            list.push();
+            let tr_template = '<tr>'+
+                '<td>'+name+'</td>'+
+                '<td>'+price+'</td>'+
+                '<td>'+qty+'</td>'+
+                '</tr>';
+            $('#myTable > tbody').append(tr_template);
+        };
+
+  	$(function() {
+        $('#btn1').click(function() {
+			let name = document.getElementById("input1").value;
+        	let price = document.getElementById("input2").value;
+        	let qty = document.getElementById("input3").value;
+			alert("儲存成功。");
+			newrow(name,price,qty);
+        });
+
+		
+
+		});
+
+ 
+
+    </script>
+
+	</body>
+	
+</html>
